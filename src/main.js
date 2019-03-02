@@ -43,7 +43,7 @@ renderer.autoResize = true;
 box.appendChild(renderer.view);
 
 const loading = document.getElementById('loading');
-const showLoading = (str = 'loading... please wait..') => {
+const showLoading = (str = 'loading music... please wait..') => {
   loading.style.display = 'block';
   loading.textContent = str;
 };
@@ -128,10 +128,10 @@ list.addEventListener('click', e => {
   const liArr = [].slice.call(e.currentTarget.children);
   if (e.target.nodeName === 'LI') {
     liArr.forEach(v => {
-      if (v.classList.contains('selected')) v.classList.remove('selected');
+      v.classList.remove('selected');
       if (e.target === v) {
         v.classList.add('selected');
-        play(`/${v.textContent}.mp3`);
+        play(`./${v.textContent}.mp3`);
       }
     });
   }
